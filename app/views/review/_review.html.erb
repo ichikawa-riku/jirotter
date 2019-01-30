@@ -1,0 +1,18 @@
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card yellow lighten-2">
+        <div class="card-content black-text">
+          <span class="card-title"><%= link_to "#{review.product.name}", "" , { :class => "black-text" }%></span>
+          <p><%= review.impression %></p>
+        </div>
+        <div class="card-content">
+          <p>投稿者：<%= link_to "#{review.user.nickname}", ""%><p>
+        </div>
+        <div class="card-action">
+          <a href="#">詳細</a>
+          <a href="#">編集</a>
+          <a href="#">削除</a>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,5 +1,6 @@
 class ReviewController < ApplicationController
   def index
+    @reviews = Review.includes(:user).includes(:product).all
   end
 
   def new
