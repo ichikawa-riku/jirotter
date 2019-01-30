@@ -21,14 +21,14 @@
   <div class="navbar-fixed">
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo"> Jirotter</a>
+      <a href="/" class="brand-logo"> Jirotter</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if user_signed_in? %>
         <li>
         <%= link_to "投稿する", new_review_path %>
         </li>
         <li>
-        <%= link_to "マイページ", '' %>
+        <%= link_to "マイページ", "#{current_user.id}" %>
         </li>
         <li>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
