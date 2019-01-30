@@ -1,0 +1,13 @@
+<div>
+  <ul class="collection center">
+    <li class="collection-header"><h4><%= @product.name %></h4></li>
+    <li class="collection-item"><img src="<%= @product.image %>" alt="<%= @product.name %>" border="0" /></li>
+    <li class="collection-item"><%= @product.adress %></li>
+    </ul>
+</div>
+
+<div>
+<% @reviews.each do |review| %>
+<%= render partial: "review/review", locals: { review: review } %>
+<% end %>
+</div>
