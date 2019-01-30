@@ -1,5 +1,5 @@
 class Scraping
-  def self.jiro_urls
+  def self.product_urls
     links = []
     agent = Mechanize.new
     current_page = agent.get("http://xn--4dkp5a8a4562a1c2fvhm.com/shoplist")
