@@ -6,7 +6,7 @@
           <p><%= review.impression %></p>
         </div>
         <div class="card-content">
-          <p>投稿者：<%= link_to "#{review.user.nickname}", ""%><p>
+          <p>投稿者：<%= link_to "#{review.user.nickname}", "/users/#{review.user_id}"%><p>
         </div>
         <div class="card-action">
           <a href="#">詳細</a>

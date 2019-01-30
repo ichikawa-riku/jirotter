@@ -1,0 +1,3 @@
+<% @reviews.each do |review| %>
+<%= render partial: "review/review", locals: { review: review } %>
+<% end %>
