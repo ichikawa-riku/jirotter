@@ -12,6 +12,10 @@ class ReviewController < ApplicationController
     redirect_to action: :index
   end
 
+  def destroy
+    redirect_to action: :index
+  end
+
   private
   def create_params
     params.require(:review).permit(:impression, :product_id).merge(user_id:current_user.id)
