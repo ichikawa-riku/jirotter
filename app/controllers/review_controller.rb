@@ -13,7 +13,19 @@ class ReviewController < ApplicationController
   end
 
   def destroy
-    redirect_to action: :index
+    review = Review.find(params[:id])
+    review.destroy if current_user.id == review.user_id
+    redirect_to action: 'index'
+  end
+
+  def edit
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    review = Review.find(params[:id])
+    review.update(create_params)
+    redirect_to action: 'index'
   end
 
   private
