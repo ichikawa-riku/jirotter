@@ -10,8 +10,8 @@
         </div>
         <% if user_signed_in? && current_user.id == review.user_id %>
         <div class="card-action">
-          <%= link_to "編集", "review/#{review.id}/edit", class: "btn" %>
-          <%= link_to "削除", "review/#{review.id}", method: :delete, class: "btn" %>
+          <%= link_to "編集", "/review/#{review.id}/edit", class: "btn" %>
+          <%= link_to "削除", "/review/#{review.id}", method: :delete, class: "btn" %>
         </div>
         <% end %>
       </div>
