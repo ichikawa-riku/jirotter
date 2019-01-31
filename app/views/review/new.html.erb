@@ -1,31 +1,26 @@
-<!-- CSS  -->
-<!-- Compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<!-- Compiled and minified JavaScript -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
 
 <script>
   $(document).ready(function(){
     $('select').formSelect();
   });
 </script>
-<div>
-<%= form_for @review, :url => {:action => :create} do |f| %>
+<div calss="row">
+<div class="input-field col s12 m6">
+<%= form_for @review, :url => { :action => :create } do |f| %>
 <div>
   <%= f.label :感想を入力してください %>
-  <%= f.text_area :impression , style: 'width: 100%;height: 300px;'%>
+  <%= f.text_area :impression , style: 'height: 100px;'%>
 </div>
 <div>
-  <%= f.label :店を選択してください %>
+  <%= f.label :店を選択してください%>
   <%= f.collection_select :product_id, Product.all, :id, :name %>
 </div>
 <div>
-    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right"></i>
+  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+  <i class="material-icons right"></i>
   </button>
 </div>
 <% end %>
+</div>
 </div>
 

@@ -12,33 +12,40 @@
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  </head>
 
-  <body>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!-- CSS  -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
+
+  <body>
   <div class="navbar-fixed">
-  <nav>
+  <nav class="yellow lighten-2">
     <div class="nav-wrapper">
-      <a href="/" class="brand-logo"> Jirotter</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <a href="/" class="black-text brand-logo"> Jirotter</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down black-text">
         <% if user_signed_in? %>
         <li>
-        <%= link_to "投稿する", new_review_path %>
+        <%= link_to "投稿する", new_review_path, class: "black-text" %>
         </li>
         <li>
-        <%= link_to "マイページ", "#{current_user.id}" %>
+        <%= link_to "マイページ", "users/#{current_user.id}", class: "black-text" %>
         </li>
         <li>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "black-text" %>
         </li>
         <% else %>
         <li>
-        <%= link_to "ログイン", new_user_session_path %>
+        <%= link_to "ログイン", new_user_session_path, class: "black-text" %>
         </li>
         <li>
-        <%= link_to "新規登録", new_user_registration_path %>
+        <%= link_to "新規登録", new_user_registration_path, class: "black-text" %>
         </li>
         <% end %>
       </ul>

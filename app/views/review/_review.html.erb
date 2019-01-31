@@ -1,5 +1,5 @@
   <div class="row">
-    <div class="col s12 m6">
+    <div class="col s12 m10 offset-m1  l8 offset-l2">
       <div class="card yellow lighten-2">
         <div class="card-content black-text">
           <span class="card-title"><%= link_to "#{review.product.name}", "/products/#{review.product_id}" , { :class => "black-text" }%></span>
@@ -9,10 +9,10 @@
           <p>投稿者：<%= link_to "#{review.user.nickname}", "/users/#{review.user_id}"%><p>
         </div>
         <div class="card-action">
-          <a href="#">詳細</a>
+          <a class="btn"href="#">詳細</a>
           <% if user_signed_in? && current_user.id == review.user_id %>
-          <%= link_to "編集", "review/#{review.id}/edit"%>
-          <%= link_to "削除", "review/#{review.id}", method: :delete %>
+          <%= link_to "編集", "review/#{review.id}/edit", class: "btn" %>
+          <%= link_to "削除", "review/#{review.id}", method: :delete, class: "btn" %>
           <% end %>
         </div>
       </div>
