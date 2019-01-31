@@ -1,4 +1,7 @@
 class ReviewController < ApplicationController
+
+  before_action :move_to_index, except: :index
+
   def index
     @reviews = Review.includes(:user).includes(:product).all.order("created_at DESC")
   end
@@ -24,13 +27,17 @@ class ReviewController < ApplicationController
 
   def update
     review = Review.find(params[:id])
-    review.update(create_params)
+    review.update(create_params) if current_user.id == review.user_id
     redirect_to action: 'index'
   end
 
   private
   def create_params
     params.require(:review).permit(:impression, :product_id).merge(user_id:current_user.id)
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signes_in?
   end
 
 end

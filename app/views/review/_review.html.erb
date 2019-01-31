@@ -8,13 +8,12 @@
         <div class="card-content">
           <p>投稿者：<%= link_to "#{review.user.nickname}", "/users/#{review.user_id}"%><p>
         </div>
+        <% if user_signed_in? && current_user.id == review.user_id %>
         <div class="card-action">
-          <a class="btn"href="#">詳細</a>
-          <% if user_signed_in? && current_user.id == review.user_id %>
           <%= link_to "編集", "review/#{review.id}/edit", class: "btn" %>
           <%= link_to "削除", "review/#{review.id}", method: :delete, class: "btn" %>
-          <% end %>
         </div>
+        <% end %>
       </div>
     </div>
   </div>
