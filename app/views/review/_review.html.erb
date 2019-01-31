@@ -10,8 +10,10 @@
         </div>
         <div class="card-action">
           <a href="#">詳細</a>
-          <a href="#">編集</a>
-          <a href="#">削除</a>
+          <% if user_signed_in? && current_user.id == review.user_id %>
+          <%= link_to "編集", "review/#{review.id}/edit"%>
+          <%= link_to "削除", "review/#{review.id}", method: :delete %>
+          <% end %>
         </div>
       </div>
     </div>
