@@ -35,7 +35,7 @@
         <%= link_to "投稿する", new_review_path, class: "black-text" %>
         </li>
         <li>
-        <%= link_to "マイページ", "users/#{current_user.id}", class: "black-text" %>
+        <%= link_to "マイページ", "/users/#{current_user.id}", class: "black-text" %>
         </li>
         <li>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "black-text" %>
