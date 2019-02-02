@@ -1,0 +1,5 @@
+  <div class="collection">
+    <% @products.each  do |product| %>
+    <a href="/products/<%= product.id %>" class="collection-item"><span class="badge"><%= product.adress %></span><%= product.name %>( レビュー数：<%= product.reviews.count %> )</a>
+    <% end %>
+  </div>

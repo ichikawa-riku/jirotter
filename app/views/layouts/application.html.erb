@@ -38,6 +38,9 @@
         <%= link_to "マイページ", "/users/#{current_user.id}", class: "black-text" %>
         </li>
         <li>
+        <%= link_to "店一覧", "/products", class: "black-text" %>
+        </li>
+        <li>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "black-text" %>
         </li>
         <% else %>
